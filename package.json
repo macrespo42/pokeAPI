@@ -1,0 +1,28 @@
+{
+  "name": "pokeapi",
+  "version": "1.0.0",
+  "description": "Pokedex api CLI",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "build": "npx tsc",
+    "start": "node dist/main.js",
+    "dev": "npx tsc && node dist/main.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/macrespo42/pokeAPI.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/macrespo42/pokeAPI/issues"
+  },
+  "homepage": "https://github.com/macrespo42/pokeAPI#readme",
+  "devDependencies": {
+    "@types/node": "^24.3.1",
+    "typescript": "^5.9.2"
+  }
+}
