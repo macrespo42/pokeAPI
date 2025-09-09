@@ -1,0 +1,2 @@
+# pokeAPI
+Pokedex api CLI
