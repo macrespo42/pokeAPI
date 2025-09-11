@@ -1,6 +1,4 @@
-import process from "node:process";
-import * as readline from "node:readline";
-import { getCommands } from "./registry.js";
+import type { State } from "./state.js";
 
 export function cleanInput(input: string): string[] {
   return input
@@ -10,23 +8,17 @@ export function cleanInput(input: string): string[] {
     .filter((word) => word.length > 0);
 }
 
-export function startREPL(): void {
-  const commands = getCommands();
-  const rl = readline.createInterface({
-    input: process.stdin,
-    output: process.stdout,
-    prompt: "pokedex> ",
-  });
-  rl.prompt();
-  rl.on("line", (rawInput) => {
+export function startREPL(state: State): void {
+  state.readline.prompt();
+  state.readline.on("line", (rawInput) => {
     const input = cleanInput(rawInput);
     if (input.length > 0) {
-      const command = commands[input[0]];
+      const command = state.commands[input[0]];
       if (!command) {
         console.log("Unknown command");
       }
-      command.callback(commands);
+      command.callback(state);
     }
-    rl.prompt();
+    state.readline.prompt();
   });
 }
