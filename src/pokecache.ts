@@ -41,5 +41,6 @@ export class Cache {
 
   stopReapLoop() {
     clearInterval(this.#reapIntervalId);
+    this.#reapIntervalId = undefined;
   }
 }

@@ -2,7 +2,6 @@ import { createInterface, Interface } from "readline";
 import { getCommands } from "./registry.js";
 import process from "node:process";
 import { PokeAPI } from "./pokeapi.js";
-import { Cache } from "./pokecache.js";
 
 export type State = {
   commands: Record<string, CLICommand>;
@@ -10,7 +9,6 @@ export type State = {
   api: PokeAPI;
   nextLocationURL: string;
   prevLocationURL: string;
-  cache: Cache;
 };
 
 export type CLICommand = {
@@ -31,7 +29,6 @@ export function initState() {
     api: new PokeAPI(),
     nextLocationURL: "",
     prevLocationURL: "",
-    cache: new Cache(5 * 1000 * 60), // 5min
   };
   return state;
 }
