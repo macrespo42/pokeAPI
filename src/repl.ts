@@ -18,7 +18,7 @@ export async function startREPL(state: State): Promise<void> {
         console.log("Unknown command");
       }
       try {
-        await command.callback(state);
+        await command.callback(state, ...input.slice(1));
       } catch (error) {
         if (error instanceof Error) {
           console.error(`Error: ${error.message}`);
