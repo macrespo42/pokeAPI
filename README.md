@@ -4,7 +4,7 @@ A Pokedex-like REPL in typescript that use the [ pokeapi ](https://pokeapi.co/) 
 
 ## Quickstart
 
-First you need to compile the binary:
+First you need to compile the project:
 
 ```bash
 npm run build
